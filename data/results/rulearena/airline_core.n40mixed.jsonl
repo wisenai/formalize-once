@@ -1,0 +1,6 @@
+{"model": "claude_opus48", "n": 40, "formalize_once_acc": 1.0, "formalize_exec_err": 0, "plain_acc": 0.925, "gap": 0.075, "code_extracted": true, "form_tokens": [7616, 22464], "plain_tokens": [253628, 109000]}
+{"model": "claude_sonnet5", "n": 40, "formalize_once_acc": 1.0, "formalize_exec_err": 0, "plain_acc": 0.375, "gap": 0.625, "code_extracted": true, "form_tokens": [7616, 55517], "plain_tokens": [253628, 109586]}
+{"model": "gpt5", "n": 40, "formalize_once_acc": 1.0, "formalize_exec_err": 0, "plain_acc": 0.975, "gap": 0.025, "code_extracted": true, "form_tokens": [24187, 6504], "plain_tokens": [153890, 197271]}
+{"model": "gemini25_pro", "n": 40, "formalize_once_acc": 0.9, "formalize_exec_err": 0, "plain_acc": 0.8, "gap": 0.1, "code_extracted": true, "form_tokens": [16446, 35593], "plain_tokens": [179524, 159963]}
+{"model": "claude_opus48", "n": 90, "formalize_once_acc": 0.978, "formalize_exec_err": 0, "plain_acc": 0.856, "gap": 0.122, "code_extracted": true, "form_tokens": [7616, 21421], "plain_tokens": [570584, 237568]}
+{"model": "claude_sonnet5", "n": 90, "formalize_once_acc": 0.9, "formalize_exec_err": 0, "plain_acc": 0.0, "gap": 0.9, "code_extracted": true, "form_tokens": [7616, 33356], "plain_tokens": [0, 0]}

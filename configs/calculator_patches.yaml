@@ -1,0 +1,15 @@
+source: Krohn-Grimberghe 2026 (arXiv:2603.02222)
+patched:
+  ckd-epi_2021_creatinine.py: 'male branch A: 0.7 -> 0.9 (CKD-EPI 2021)'
+quarantined:
+  '23': 'audit: MELD-Na should be updated to MELD 3.0 (version ambiguity)'
+  '45': 'audit: CURB-65 BUN threshold boundary bug (>19 vs >20 mg/dL)'
+kept_verified:
+- 9 (MDRD, 175-constant formula correct)
+independent_spot_checks:
+- '6: 22.857≈22.857 [BMI = 70 / 1.75^2]'
+- '5: 93.333≈93.333 [MAP = (SBP + 2*DBP)/3]'
+- '39: 16.000≈16.0 [Anion gap = Na - (Cl + HCO3)]'
+- '7: 8.800≈8.8 [Corrected Ca = Ca + 0.8*(4 - albumin)]'
+- '3: 101.316≈101.3 [CKD-EPI 2021 male, A=0.9 (post-patch)]'
+spot_check_failures: []

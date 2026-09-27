@@ -1,0 +1,2 @@
+{"model": "claude_opus48", "n": 40, "formalize_once_acc": 1.0, "formalize_exec_err": 0, "plain_acc": 0.925, "gap": 0.075, "code_extracted": true, "form_tokens": [7616, 22962], "plain_tokens": [253628, 110367]}
+{"model": "claude_sonnet5", "n": 40, "formalize_once_acc": 0.0, "formalize_exec_err": 40, "plain_acc": 0.525, "gap": -0.525, "code_extracted": false, "form_tokens": [22848, 96000], "plain_tokens": [253628, 103232]}

@@ -1,0 +1,118 @@
+"""The paper's headline scope claim, counted rather than asserted.
+
+"Formalize-once is never significantly less accurate" is the framing the submitted
+version was accepted on, and it is worth restoring only if it is still true across
+everything measured since. So this counts every reported cell -- public base
+difficulty, the airline difficulty tiers, generated inputs, unstructured inputs, and
+the harder tax tier at branch-covering worked examples -- and reports how many have
+per-case reasoning significantly ahead.
+
+Cells run with worked examples that omit a branch of the ruleset are excluded and the
+branch-covering rerun used instead, because those measure the example draw rather than
+the strategy (Section 5.3). That exclusion is the one judgement here, so the counts
+print both ways.
+
+Run:  .venv/bin/python tools/fill_ra_scope.py
+"""
+import json
+import math
+import sys
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parent.parent
+RES = ROOT / "data" / "results" / "rulearena"
+sys.path.insert(0, str(ROOT / "src"))
+sys.path.insert(0, str(ROOT / "tools"))
+from ra_cells import paired, rows                                   # noqa: E402
+
+OUT = ROOT / "paper" / "ra_scope_macros.tex"
+
+
+def mcnemar(b, c):
+    n = b + c
+    if n == 0:
+        return 1.0
+    return min(1.0, sum(math.comb(n, i) for i in range(min(b, c) + 1)) / 2 ** n * 2)
+
+
+def from_file(fname, fkey, pkey):
+    out = []
+    fp = RES / fname
+    if not fp.exists():
+        return out
+    for line in fp.read_text().splitlines():
+        if not line.strip():
+            continue
+        r = json.loads(line)
+        if r.get("n") != 90 or sum(r.get("per_case_plain_err", [])):
+            continue
+        f, p = r[fkey], r[pkey]
+        b = sum(1 for i in range(len(f)) if f[i] and not p[i])
+        c = sum(1 for i in range(len(f)) if p[i] and not f[i])
+        out.append((f"{r['model']} {fname}", (b - c) / len(f), mcnemar(b, c)))
+    return out
+
+
+def main():
+    cells = []
+    for dom, lvls in (("airline", (0, 1, 2)), ("tax", (0,))):
+        for lv in lvls:
+            for mid, r in rows(dom, lv).items():
+                b, c, n = paired(r, dom, lv)
+                cells.append((f"{mid} {dom} L{lv}", (b - c) / n, mcnemar(b, c)))
+    cells += from_file("airline_fresh_core.jsonl", "per_case_form", "per_case_plain")
+    cells += from_file("airline_extract.jsonl", "per_case_e2e", "per_case_plaintext")
+    # comp_1 formalize results come from the non-binding-budget run where one exists;
+    # both generators must apply the same correction or they disagree about how many
+    # cells favor per-case reasoning.
+    from fill_ra_taxl1 import load_formbudget
+    fb = load_formbudget()
+    for name, g, p_ in from_file("tax_L1strat_core.jsonl", "per_case_form",
+                                 "per_case_plain"):
+        mid = name.split()[0]
+        if mid in fb and fb[mid].get("per_case_form"):
+            plain = next(json.loads(l)["per_case_plain"]
+                         for l in (RES / "tax_L1strat_core.jsonl").read_text().splitlines()
+                         if l.strip() and json.loads(l)["model"] == mid
+                         and json.loads(l).get("n") == 90)
+            f = fb[mid]["per_case_form"]
+            b = sum(1 for i in range(len(f)) if f[i] and not plain[i])
+            c = sum(1 for i in range(len(f)) if plain[i] and not f[i])
+            cells.append((name, (b - c) / len(f), mcnemar(b, c)))
+        else:
+            cells.append((name, g, p_))
+
+    losses = [c for c in cells if c[2] < 0.05 and c[1] < 0]
+    wins = [c for c in cells if c[2] < 0.05 and c[1] > 0]
+    print(f"cells counted: {len(cells)}")
+    print(f"  formalize significantly ahead: {len(wins)}")
+    print(f"  per-case significantly ahead : {len(losses)}")
+    for n, g, p in losses:
+        print(f"      {n:34s} {g:+.2f}  p={p:.4f}")
+
+    naive = from_file("tax_L1_core.jsonl", "per_case_form", "per_case_plain")
+    nloss = [c for c in naive if c[2] < 0.05 and c[1] < 0]
+    print(f"  (counting the omitted-branch tax draw instead would add "
+          f"{len(nloss)} more losses)")
+
+    # Name every losing cell rather than hardcoding one. Both current exceptions are
+    # cells where the model cannot write a good program, which is the point of them.
+    PRETTY = {"gemini35_flash airline L1": "Gemini~3.5~Flash at airline Level~1",
+              "gemini31_pro tax_L1strat_core.jsonl":
+                  "Gemini~3.1~Pro at the harder tax tier"}
+    names = [PRETTY.get(n, n) for n, _, _ in losses]
+    joined = names[0] if len(names) == 1 else (
+        " and ".join(names) if len(names) == 2 else
+        ", ".join(names[:-1]) + " and " + names[-1])
+    out = [("raScopeCells", str(len(cells))),
+           ("raScopeLosses", str(len(losses))),
+           ("raScopeWins", str(len(wins))),
+           ("raScopeLossCells", joined),
+           ("raScopeLossWord", "cell" if len(losses) == 1 else "cells")]
+    OUT.write_text("% generated by tools/fill_ra_scope.py -- do not edit\n"
+                   + "".join(f"\\newcommand{{\\{k}}}{{{v}}}\n" for k, v in out))
+    print(f"\nwrote {OUT.name}: " + ", ".join(f"{k}={v}" for k, v in out))
+
+
+if __name__ == "__main__":
+    main()

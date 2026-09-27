@@ -1,0 +1,29 @@
+# Clinically-plausible sampling ranges for L2 (value_shift). Values are drawn
+# uniformly in [min, max] in the canonical unit and rounded to `round`. Only
+# numeric entities that appear in equation/score calculators are listed; entities
+# not listed here are left unchanged by L2.
+ranges:
+  age:                         {min: 18,   max: 95,   unit: years,   round: 0}
+  weight:                      {min: 45,   max: 130,  unit: kg,      round: 1}
+  height:                      {min: 150,  max: 195,  unit: cm,      round: 0}
+  creatinine:                  {min: 0.5,  max: 6.0,  unit: mg/dL,   round: 2}
+  Pre-operative creatinine:    {min: 0.6,  max: 5.0,  unit: mg/dL,   round: 2}
+  Sodium:                      {min: 120,  max: 155,  unit: mEq/L,   round: 0}
+  Chloride:                    {min: 90,   max: 118,  unit: mEq/L,   round: 0}
+  Bicarbonate:                 {min: 10,   max: 34,   unit: mEq/L,   round: 1}
+  Albumin:                     {min: 1.5,  max: 5.0,  unit: g/dL,    round: 1}
+  Glucose:                     {min: 70,   max: 400,  unit: mg/dL,   round: 0}
+  Bilirubin:                   {min: 0.5,  max: 20.0, unit: mg/dL,   round: 1}
+  Calcium:                     {min: 6.0,  max: 13.0, unit: mg/dL,   round: 1}
+  'Heart Rate or Pulse':       {min: 50,   max: 160,  unit: bpm,     round: 0}
+  'Systolic Blood Pressure':   {min: 85,   max: 210,  unit: mm Hg,   round: 0}
+  'Diastolic Blood Pressure':  {min: 45,   max: 110,  unit: mm Hg,   round: 0}
+  'QT Interval':               {min: 320,  max: 480,  unit: msec,    round: 0}
+  Temperature:                 {min: 36.0, max: 40.0, unit: degrees celsius, round: 1}
+  'Blood Urea Nitrogen (BUN)': {min: 8,    max: 120,  unit: mg/dL,   round: 0}
+  'respiratory rate':          {min: 12,   max: 40,   unit: breaths per minute, round: 0}
+  'Total cholesterol':         {min: 120,  max: 320,  unit: mg/dL,   round: 0}
+  'high-density lipoprotein cholesterol': {min: 25, max: 90, unit: mg/dL, round: 0}
+  Triglycerides:               {min: 60,   max: 350,  unit: mg/dL,   round: 0}
+  Hematocrit:                  {min: 28,   max: 50,   unit: '%',     round: 0}
+  'O₂ saturation percentage':  {min: 82,   max: 100,  unit: '%',     round: 0}

@@ -1,0 +1,280 @@
+quarantined_reason: GT not reproduced by shipped calculator on >25% of rows (entity
+  dict underspecifies note-inferred inputs)
+calculators:
+  2:
+    name: Creatinine Clearance (Cockcroft-Gault Equation)
+    family: equation
+    output_type: decimal
+    category: lab test
+  3:
+    name: CKD-EPI Equations for Glomerular Filtration Rate
+    family: equation
+    output_type: decimal
+    category: lab test
+  4:
+    name: CHA2DS2-VASc Score for Atrial Fibrillation Stroke Risk
+    family: score
+    output_type: integer
+    category: risk
+  5:
+    name: Mean Arterial Pressure (MAP)
+    family: equation
+    output_type: decimal
+    category: physical
+  6:
+    name: Body Mass Index (BMI)
+    family: equation
+    output_type: decimal
+    category: physical
+  7:
+    name: Calcium Correction for Hypoalbuminemia
+    family: equation
+    output_type: decimal
+    category: lab test
+  8:
+    name: Wells' Criteria for Pulmonary Embolism
+    family: score
+    output_type: integer
+    category: risk
+  9:
+    name: MDRD GFR Equation
+    family: equation
+    output_type: decimal
+    category: lab test
+  10:
+    name: Ideal Body Weight
+    family: equation
+    output_type: decimal
+    category: physical
+  11:
+    name: QTc Bazett Calculator
+    family: equation
+    output_type: decimal
+    category: physical
+  13:
+    name: Estimated Due Date
+    family: date
+    output_type: date
+    category: date
+  15:
+    name: Child-Pugh Score for Cirrhosis Mortality
+    family: score
+    output_type: integer
+    category: severity
+  16:
+    name: Wells' Criteria for DVT
+    family: equation
+    output_type: decimal
+    category: risk
+  17:
+    name: Revised Cardiac Risk Index for Pre-Operative Risk
+    family: score
+    output_type: integer
+    category: risk
+  18:
+    name: HEART Score for Major Cardiac Events
+    family: score
+    output_type: integer
+    category: risk
+  19:
+    name: Fibrosis-4 (FIB-4) Index for Liver Fibrosis
+    family: equation
+    output_type: decimal
+    category: lab test
+  20:
+    name: Centor Score (Modified/McIsaac) for Strep Pharyngitis
+    family: score
+    output_type: integer
+    category: severity
+  21:
+    name: Glasgow Coma Score (GCS)
+    family: score
+    output_type: integer
+    category: severity
+  22:
+    name: Maintenance Fluids Calculations
+    family: equation
+    output_type: decimal
+    category: physical
+  23:
+    name: MELD Na (UNOS/OPTN)
+    family: quarantine
+    output_type: decimal
+    category: lab test
+    quarantine_reason: 'audit: MELD-Na should be updated to MELD 3.0 (version ambiguity)'
+  24:
+    name: Steroid Conversion Calculator
+    family: score
+    output_type: integer
+    category: dosage
+  25:
+    name: HAS-BLED Score for Major Bleeding Risk
+    family: score
+    output_type: integer
+    category: risk
+  26:
+    name: Sodium Correction for Hyperglycemia
+    family: equation
+    output_type: decimal
+    category: lab test
+  27:
+    name: Glasgow-Blatchford Bleeding Score (GBS)
+    family: quarantine
+    output_type: integer
+    category: risk
+  28:
+    name: APACHE II Score
+    family: quarantine
+    output_type: integer
+    category: risk
+  29:
+    name: 'PSI Score: Pneumonia Severity Index for CAP'
+    family: score
+    output_type: integer
+    category: severity
+  30:
+    name: Serum Osmolality
+    family: equation
+    output_type: decimal
+    category: lab test
+  31:
+    name: HOMA-IR (Homeostatic Model Assessment for Insulin Resistance)
+    family: equation
+    output_type: decimal
+    category: lab test
+  32:
+    name: Charlson Comorbidity Index (CCI)
+    family: score
+    output_type: integer
+    category: risk
+  33:
+    name: FeverPAIN Score for Strep Pharyngitis
+    family: score
+    output_type: integer
+    category: diagnosis
+  36:
+    name: Caprini Score for Venous Thromboembolism (2005)
+    family: quarantine
+    output_type: integer
+    category: risk
+  38:
+    name: Free Water Deficit
+    family: equation
+    output_type: decimal
+    category: lab test
+  39:
+    name: Anion Gap
+    family: equation
+    output_type: decimal
+    category: lab test
+  40:
+    name: Fractional Excretion of Sodium (FENa)
+    family: equation
+    output_type: decimal
+    category: lab test
+  43:
+    name: Sequential Organ Failure Assessment (SOFA) Score
+    family: score
+    output_type: integer
+    category: risk
+  44:
+    name: LDL Calculated
+    family: equation
+    output_type: decimal
+    category: lab test
+  45:
+    name: CURB-65 Score for Pneumonia Severity
+    family: quarantine
+    output_type: integer
+    category: risk
+    quarantine_reason: 'audit: CURB-65 BUN threshold boundary bug (>19 vs >20 mg/dL)'
+  46:
+    name: Framingham Risk Score for Hard Coronary Heart Disease
+    family: equation
+    output_type: decimal
+    category: lab test
+  48:
+    name: PERC Rule for Pulmonary Embolism
+    family: score
+    output_type: integer
+    category: diagnosis
+  49:
+    name: Morphine Milligram Equivalents (MME) Calculator
+    family: score
+    output_type: integer
+    category: dosage
+  51:
+    name: SIRS Criteria
+    family: score
+    output_type: integer
+    category: diagnosis
+  56:
+    name: QTc Fridericia Calculator
+    family: equation
+    output_type: decimal
+    category: physical
+  57:
+    name: QTc Framingham Calculator
+    family: equation
+    output_type: decimal
+    category: physical
+  58:
+    name: QTc Hodges Calculator
+    family: equation
+    output_type: decimal
+    category: physical
+  59:
+    name: QTc Rautaharju Calculator
+    family: equation
+    output_type: decimal
+    category: physical
+  60:
+    name: Body Surface Area Calculator
+    family: equation
+    output_type: decimal
+    category: physical
+  61:
+    name: Target weight
+    family: equation
+    output_type: decimal
+    category: physical
+  62:
+    name: Adjusted Body Weight
+    family: equation
+    output_type: decimal
+    category: physical
+  63:
+    name: Delta Gap
+    family: equation
+    output_type: decimal
+    category: lab test
+  64:
+    name: Delta Ratio
+    family: equation
+    output_type: decimal
+    category: lab test
+  65:
+    name: Albumin Corrected Anion Gap
+    family: equation
+    output_type: decimal
+    category: lab test
+  66:
+    name: Albumin Corrected Delta Gap
+    family: equation
+    output_type: decimal
+    category: lab test
+  67:
+    name: Albumin Corrected Delta Ratio
+    family: equation
+    output_type: decimal
+    category: lab test
+  68:
+    name: Estimated of Conception
+    family: date
+    output_type: date
+    category: date
+  69:
+    name: Estimated Gestational Age
+    family: date
+    output_type: date
+    category: date

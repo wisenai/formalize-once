@@ -1,0 +1,121 @@
+specs:
+  '10': 'For males, the ideal body weight (IBW) is calculated as follows: IBW = 50 kg + 2.3 kg * (height (in inches) - 60)
+
+    For females, the ideal body weight (IBW) is calculated as follows: 45.5 kg + 2.3 kg * (height (in inches) - 60)'
+  '2': The formula for computing Cockcroft-Gault is given by CrCl = ((140 - age) * adjusted weight * (gender_coefficient)) / (serum creatinine * 72), where the gender_coefficient is 1 if male, and 0.85
+    if female. The serum creatinine concentration is in mg/dL.
+  '20': 'The criteria listed in the Centor Score formula are listed below:
+
+
+    1. Age: 3-14 years = +1 point, 15-44 years = 0 points, ≥45 years = -1 point
+
+    2. Exudate or swelling on tonsils: No = 0 points, Yes = +1 point
+
+    3. Tender/swollen anterior cervical lymph nodes: No = 0 points, Yes = +1 point
+
+    4. Temperature >38°C (100.4°F): No = 0 points, Yes = +1 point
+
+    5. Cough: Cough present = 0 points, Cough absent = +1 point
+
+
+    The Centor score is calculated by summing the points for each criterion.'
+  '25': 'The criteria for the HAS-BLED score are listed below below:
+
+
+    1. Hypertension (Uncontrolled, >160 mmHg systolic): No = 0 points, Yes = +1 point
+
+    2. Renal disease (Dialysis, transplant, Cr >2.26 mg/dL or >200 µmol/L): No = 0 points, Yes = +1 point
+
+    3. Liver disease (Cirrhosis or bilirubin >2x normal with AST/ALT/AP >3x normal): No = 0 points, Yes = +1 point
+
+    4. Stroke history: No = 0 points, Yes = +1 point
+
+    5. Prior major bleeding or predisposition to bleeding: No = 0 points, Yes = +1 point
+
+    6. Labile INR (Unstable/high INRs, time in therapeutic range <60%): No = 0 points, Yes = +1 point
+
+    7. Age >65: No = 0 points, Yes = +1 point
+
+    8. Medication usage predisposing to bleeding (Aspirin, clopidogrel, NSAIDs): No = 0 points, Yes = +1 point
+
+    9. Alcohol use (≥8 drinks/week): No = 0 points, Yes = +1 point
+
+
+    The total HAS-BLED score is calculated by summing the points for each criterion.'
+  '26': The formula for Sodium Correction for Hyperglycemia based on Hiller, 1999 is Measured sodium + 0.024 * (Serum glucose - 100), where Measured Sodium is the sodium concentration in mEq/L and the Serum
+    glucose is the concentration of glucose in mg/dL.
+  '29': 'The rules for computing the Pneumonia Severity Index (PSI) are shown below:
+
+
+    1. Age: Enter age in years (age score will be equal to age in years)
+
+    2. Sex: Female = -10 points, Male = 0 points
+
+    3. Nursing home resident: No = 0 points, Yes = +10 points
+
+    4. Neoplastic disease: No = 0 points, Yes = +30 points
+
+    5. Liver disease history: No = 0 points, Yes = +20 points
+
+    6. Congestive heart failure (CHF) history: No = 0 points, Yes = +10 points
+
+    7. Cerebrovascular disease history: No = 0 points, Yes = +10 points
+
+    8. Renal disease history: No = 0 points, Yes = +10 points
+
+    9. Altered mental status: No = 0 points, Yes = +20 points
+
+    10. Respiratory rate ≥30 breaths/min: No = 0 points, Yes = +20 points
+
+    11. Systolic blood pressure <90 mmHg: No = 0 points, Yes = +20 points
+
+    12. Temperature <35°C (95°F) or >39.9°C (103.8°F): No = 0 points, Yes = +15 points
+
+    13. Pulse ≥125 beats/min: No = 0 points, Yes = +10 point'
+  '3': 'The formula for computing GFR is 142 x (Scr/A)**B x 0.9938**age x (gender_coeffcient), where the ** indicates an exponent operation, Scr is the concentration of serum creatinine in mg/dL and gender_coefficient
+    is 1.012 if the patient is female, else the coeffient is 1. The coefficients A and B are dependent on the patient''s gender and the patient''s creatinine concentration.
+
+    If the creatinine concentration is less than or equal to 0.7 mg/dL and the patient is female, A = 0.7 and B = -0.241.
+
+    If the creatinine concentration is less than or equal to 0.9 mg/dL and the patient is male, A = 0.9 and B = -0.302.
+
+    If the creatinine concentration is greater than 0.7 mg/dL and the patient is female, A = 0.7 and B = -1.2.
+
+    If the creatinine concentration is greater than 0.9 mg/dL and the patient is male, A = 0.9 and B = -1.2.'
+  '30': The formula for computing serum osmolality is 2 * Na + (BUN / 2.8) + (glucose / 18), where Na is the concentration of sodium in mmol/L, the concentration of BUN is in mg/dL, and the concentration
+    of glucose is in mg/dL.
+  '39': 'The formula for computing a patient''s anion gap is: sodium (mEq/L) - (chloride (mEq/L)+ bicarbonate (mEq/L)).'
+  '4': 'The criteria for the CHA2DS2-VASc score are listed below:
+
+
+    1. Age: < 65 years = 0 points, 65-74 years = +1 point, ≥ 75 years = +2 points
+
+    2. Sex: Female = +1 point, Male = 0 points
+
+    3. Congestive Heart Failure (CHF) history: No = 0 points, Yes = +1 point
+
+    4. Hypertension history: No = 0 points, Yes = +1 point
+
+    5. Stroke, Transient Ischemic Attack (TIA), or Thromboembolism history: No = 0 points, Yes = +2 points
+
+    6. Vascular disease history (previous myocardial infarction, peripheral artery disease, or aortic plaque): No = 0 points, Yes = +1 point
+
+    7. Diabetes history: No = 0 points, Yes = +1 point
+
+
+    The CHA2DS2-VASc score is calculated by summing the points for each criterion.'
+  '40': The formula for computing the FEna percentage is (creatinine * urine_sodium)/(sodium * urine_creatinine) * 100, where creatinine is the concentration in mg/dL, urine sodium is the concentration
+    in mEq/L, sodium is the concentration mEq/L, and urine creatinine is the concentration in mg/dL.
+  '5': The mean average pressure is computed by the formula 1/3 * (systolic blood pressure) + 2/3 * (diastolic blood pressure).
+  '6': The formula for computing the patient's BMI is (weight)/(height * height), where weight is the patient's weight in kg and height is the patient's height in m.
+  '60': For the body surface area computation, the formula is sqrt((weight (in kgs) * height (in cm))/3600, where the units of weight is in kg and the units of height is in cm.
+  '62': 'For males, the ideal body weight (IBW) is calculated as follows: IBW = 50 kg + 2.3 kg * (height (in inches) - 60)
+
+    For females, the ideal body weight (IBW) is calculated as follows: 45.5 kg + 2.3 kg * (height (in inches) - 60)'
+  '7': To compute the patient's correct calcium level in mg/dL, the formula is  (0.8 * (Normal Albumin (in g/dL) - Patient's Albumin (in g/dL))) + Serum Calcium (in mg/dL).
+  '8': "The criteria for the Wells' Criteria for Pulmonary Embolism score are listed below:\n\n1. Clinical signs and symptoms of DVT: No = 0 points, Yes = +3 points\n2. PE is #1 diagnosis OR equally likely:\
+    \ No = 0 points, Yes = +3 points\n3. Heart rate > 100: No = 0 points, Yes = +1.5 points\n4. Immobilization at least 3 days OR surgery in the previous 4 weeks: No = 0 points, Yes = +1.5 points\n5. Previous,\
+    \ objectively diagnosed PE or DVT: No = 0 points, Yes = +1.5 points\n6. Hemoptysis: No = 0 points, Yes = +1 point\n7. Malignancy with treatment within 6 months or palliative: No = 0 points, Yes = +1\
+    \ point\n\nThe total score is calculated by summing the points for each criterion.\n   \nThe Well's score for pulmonary embolism is currently 0.\nClinical signs and symptoms of DVT are not reported\
+    \ and so we assume that this is missing from the patient, keeping the current total at 0. Pulmonary Embolism is not rep"
+  '9': ''

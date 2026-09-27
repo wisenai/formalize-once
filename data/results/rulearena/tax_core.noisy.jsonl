@@ -1,0 +1,4 @@
+{"model": "claude_opus48", "domain": "tax", "n": 90, "formalize_once_acc": 0.967, "formalize_exec_err": 0, "plain_acc": 0.856, "gap": 0.111, "code_extracted": true, "form_tokens": [13040, 10721], "plain_tokens": [834218, 207591]}
+{"model": "claude_sonnet5", "domain": "tax", "n": 90, "formalize_once_acc": 0.967, "formalize_exec_err": 0, "plain_acc": 0.878, "gap": 0.089, "code_extracted": true, "form_tokens": [13040, 20726], "plain_tokens": [834218, 321311]}
+{"model": "gpt5", "domain": "tax", "n": 90, "formalize_once_acc": 0.0, "formalize_exec_err": 0, "plain_acc": 0.0, "gap": 0.0, "code_extracted": true, "form_tokens": [28263, 38405], "plain_tokens": [608543, 577887]}
+{"model": "gemini25_pro", "domain": "tax", "n": 90, "formalize_once_acc": 0.0, "formalize_exec_err": 0, "plain_acc": 0.189, "gap": -0.189, "code_extracted": true, "form_tokens": [32733, 34075], "plain_tokens": [692263, 458673]}

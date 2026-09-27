@@ -1,0 +1,38 @@
+# L3 distractor sentences: clinically PLAUSIBLE narrative findings that are verified
+# non-inputs for the calculator. Every entry is something that could realistically
+# appear in a hospital note during a real workup (a lab, imaging, exam, or history
+# finding) but is not consumed by the calculator, so the answer is unchanged. The
+# generator asserts the mentioned token is absent from the calculator's arg set
+# before use. (Non-clinical items like "shoe size" / "coffee habit" were removed
+# after clinician review — see PERTURBATION_REVIEW.md.)
+common:
+  - text: "The patient's most recent hemoglobin A1c was 6.1%."
+    mentions: ["a1c", "hemoglobin a1c"]
+  - text: "Serum magnesium was 2.0 mg/dL and phosphate was within normal limits."
+    mentions: ["magnesium", "phosphate"]
+  - text: "A 25-hydroxy vitamin D level was 32 ng/mL, within the normal range."
+    mentions: ["vitamin d"]
+  - text: "Thyroid-stimulating hormone (TSH) was 2.3 mIU/L."
+    mentions: ["tsh", "thyroid"]
+  - text: "Serum ferritin was 145 ng/mL."
+    mentions: ["ferritin"]
+  - text: "A screening chest radiograph showed no acute cardiopulmonary process."
+    mentions: ["chest radiograph", "chest x-ray", "cxr"]
+  - text: "The patient was up to date on age-appropriate cancer screening."
+    mentions: ["cancer screening"]
+  - text: "Vitamin B12 and folate levels were within normal limits."
+    mentions: ["b12", "folate"]
+  - text: "The patient reported no recent travel and no sick contacts."
+    mentions: ["travel", "sick contacts"]
+  - text: "Uric acid was 5.4 mg/dL."
+    mentions: ["uric acid"]
+equation:
+  - text: "An electrocardiogram showed normal sinus rhythm without acute changes."
+    mentions: ["electrocardiogram", "ecg", "ekg", "sinus rhythm"]
+  - text: "Serum lipase was within normal limits."
+    mentions: ["lipase"]
+score:
+  - text: "The patient's random serum glucose on arrival was 118 mg/dL."
+    mentions: ["glucose"]
+  - text: "Lactate dehydrogenase (LDH) was 210 U/L."
+    mentions: ["ldh", "lactate dehydrogenase"]
